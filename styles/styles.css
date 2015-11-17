@@ -1,0 +1,79 @@
+.item span {
+    float: left;
+    font-size: 12px;
+}
+
+.item a {
+    float: right;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.item:after {
+    content: '\2193';
+    font-size: 24px;
+    display: block;
+}
+
+.item {
+    list-style: none;
+    font-size: 30px;
+    text-align: center;
+    background: white;
+    height: 50px;
+}
+
+.textright {
+    text-align: right;
+    float: right;
+    position: fixed;
+    right: 0;
+    top: 15px;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+#treeWrapper,
+#previewWrapper,
+#dfsWrapper {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+}
+
+#dfsWrapper {
+    margin-top: 50px;
+}
+
+#bfsWrapper {
+    margin-top: 50px;
+}
+
+#previewWrapper {
+    margin-top: 50px;
+}
+/*.selectButton.active {
+    color: red;
+    border: 2px solid red;
+}*/
+/*.selectButton {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid transparent;
+    color: black;
+    text-decoration: none;
+}*/
+
+#attrWrapper {
+    margin: 16px auto;
+}
+
+#HTMLTree {
+    margin-left: 20px;
+}
+/*.head,
+.tail {
+    margin-left: -16px;
+}*/

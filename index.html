@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>HTML Tree</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/jqtree.css">
+    <script src='scripts/jquery-1.11.3.js'>
+    </script>
+    <script src='scripts/tree.jquery.js'>
+    </script>
+    <script src='scripts/htmltree.js'>
+    </script>
+</head>
+
+<body onload='startUp()'>
+    <h1 class="textcenter"> HTML Tree Builder</h1>
+    <hr>
+    <div id='treeSelector' class='textcenter'>
+        <a href='javascript:showTree()' class='selectButton btn btn-info btn-lg' id="treeButton"> Tree </a>
+        <a href='javascript:showPreview()' class='selectButton btn btn-info btn-lg' id="previewButton"> Preview </a>
+        <a href='javascript:showDFS()' class='selectButton btn btn-info btn-lg' id="dfsButton"> DFS </a>
+        <a href='javascript:showBFS()' class='selectButton btn btn-info btn-lg' id="bfsButton"> BFS </a>
+    </div>
+    <div class="container">
+        <div id="previewWrapper">
+            Placeholder for Preview Wrapper
+        </div>
+        <div id="theTreeWrapper">
+            <a class='selectButton btn btn-primary' href='javascript:addNewElement()'> + Add New</a>
+            <hr>
+            <div class="head"> &lt;HTML&gt;</div>
+            <div id="HTMLTree"> </div>
+            <div class="tail" style='margin-top: 15px'> &lt;/HTML&gt;</div>
+        </div>
+        <div id="bfsWrapper">
+        </div>
+        <div id="dfsWrapper">
+        </div>
+        <div id="theTreeOptionsWrapper">
+            <a class='cancelButton selectButton btn btn-danger' href='javascript:cancelClicked()'>Cancel</a>
+            <a class='saveButton selectButton btn btn-success' href='javascript:saveClicked()'>Save</a>
+            <a class='selectButton btn btn-primary' href='javascript:newRow()'>+ New attr</a>
+            <div id="attrWrapper"> </div>
+        </div>
+    </div>
+</body>
+
+</html>
