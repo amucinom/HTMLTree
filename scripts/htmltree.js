@@ -157,7 +157,7 @@ function bfs() {
 			// console.log('**Root of tree**');
 			return;
 		}
-		console.log(node.name + 'ID: ' + node.id);
+		console.log(node.name + ' ID: ' + node.id);
 		$('#bfsWrapper').append('<p>Name: <strong>' + node.type + '</strong>, ID: <em>' + node.id + '</em></p>');
 	};
 
@@ -189,7 +189,7 @@ function dfs() {
 			// console.log('**Root of tree**');
 			return;
 		}
-		console.log(node.name + 'ID: ' + node.id);
+		console.log(node.name + ' ID: ' + node.id);
 		// $('#dfsWrapper')
 		// 	.html('ID: ' + node.id + '\n');
 		// res.push(node.id);
