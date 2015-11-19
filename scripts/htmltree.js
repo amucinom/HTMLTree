@@ -51,6 +51,7 @@ function showPreview() {
 	$('#dfsButton').removeClass('active');
 	$('#bfsButton').removeClass('active');
 	$("#previewButton").addClass("active");
+	generatePreview();
 }
 
 var allRoots = [];
@@ -81,7 +82,7 @@ function addNewElement() {
 
 
 var theHTMLTree = null;
-var row = null;
+// var row = null;
 
 
 function initHTMLTree() {
@@ -102,12 +103,12 @@ function initHTMLTree() {
 		autoOpen: 0,
 		data: row,
 		onCreateLi: function(node, $li) {
-			/*
-			  $li.find('.jqtree-element').append(
-			    '<a href="javascript:nodeOptions(' + "'" + node.id + "','" + node.type + "'," + node.getLevel() + ")" + '" class="edita link" data-node-id="'+
-			  node.id +'">edit</a>'
-			  );
-			 */
+
+			  // $li.find('.jqtree-element').append(
+			  //   '<a href="javascript:nodeOptions(' + "'" + node.id + "','" + node.type + "'," + node.getLevel() + ")" + '" class="edita link" data-node-id="'+
+			  // node.id +'">edit</a>'
+			  // );
+
 		},
 		onCanMoveTo: function(moved_node, target_node, position) {
 			return true;
@@ -354,12 +355,12 @@ function generatePreview() {
 	$('#HTMLTree').tree('getTree').iterate(
 		function(node, level) {
 			console.log(node.id, level);
-			if (level == 0) {
+			if (level === 0) {
 				Parent = document.getElementById("previewWrapper");
 				Parent.name = node.name;
 				pathAlongDOM = [Parent];
 			}
-			console.log(pathAlongDOM.length, level)
+			console.log(pathAlongDOM.length, level);
 			while (pathAlongDOM.length > level + 1) {
 				pathAlongDOM.pop();
 			}
@@ -380,7 +381,7 @@ function generatePreview() {
 
 
 			NewNode.id = node.nodeID + rand;
-			if (node.nodeID.length == 0) {
+			if (node.nodeID.length === 0) {
 				NewNode.id = node.id + rand;
 			}
 			Parent.appendChild(NewNode);
@@ -397,10 +398,11 @@ function generatePreview() {
 var tree1 = '[{"id":"1447692676177","name":"<BODY>","nodeID":"","type":"BODY","style":"","className":"","innerHTML":"","is_open":true,"children":[{"id":"1447692680511","name":"Wrapper 1","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":false,"children":[{"id":"1447692749749","name":"H1","nodeID":"","style":"","className":"","innerHTML":"","type":"H1"},{"id":"1447692766027","name":"H2","nodeID":"","style":"","className":"","innerHTML":"","type":"H2"},{"id":"1447692786169","name":"Para","nodeID":"","style":"","className":"","innerHTML":"","type":"p"}]},{"id":"1447692712967","name":"Wrapper 2","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":false,"children":[{"id":"1447692740254","name":"H1","nodeID":"","style":"","className":"","innerHTML":"","type":"H1"},{"id":"1447692765760","name":"H2","nodeID":"","style":"","className":"","innerHTML":"","type":"H2"},{"id":"1447692786474","name":"Para","nodeID":"","style":"","className":"","innerHTML":"","type":"p"}]}]}]';
 var tree1Root = "1447692676177";
 
-var tree2 = '[{"id":"1447821849583","name":"<BODY>","nodeID":"","type":"BODY","style":"","className":"","innerHTML":"","is_open":true,"children":[{"id":"1447821875018","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821875185","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821874515","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"},{"id":"1447821873496","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821873845","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"}]},{"id":"1447821874029","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"}]}]},{"id":"1447821874684","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821873677","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"},{"id":"1447821874849","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"}]}]}]'
+var tree2 = '[{"id":"1447821849583","name":"<BODY>","nodeID":"","type":"BODY","style":"","className":"","innerHTML":"","is_open":true,"children":[{"id":"1447821875018","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821875185","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821874515","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"},{"id":"1447821873496","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821873845","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"}]},{"id":"1447821874029","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"}]}]},{"id":"1447821874684","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821873677","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"},{"id":"1447821874849","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"}]}]}]';
 var tree2Root = "1447821849583";
 
 var tree3 = '[{"id":"1447821972921","name":"<BODY>","nodeID":"","type":"BODY","style":"","className":"","innerHTML":"","is_open":true,"children":[{"id":"1447821974587","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821975009","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"},{"id":"1447821974734","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"},{"id":"1447821974420","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821974111","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"}]},{"id":"1447821974884","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV","is_open":true,"children":[{"id":"1447821974261","name":"<DIV>","nodeID":"","style":"","className":"","innerHTML":"","type":"DIV"}]}]}]}]';
+
 var tree3Root = "1447821972921";
 
 
