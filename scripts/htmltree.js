@@ -313,17 +313,17 @@ function saveClicked() {
 	cancelClicked();
 }
 
-// function saveEdit() {
-// 	theNode = theHTMLTree.tree('getNodeById', currEditNode);
-// 	theHTMLTree.tree(
-// 		'updateNode',
-// 		theNode, {
-// 			label: document.getElementById("menuNodeName").value,
-// 			subname: document.getElementById("menuNodeSubName").value,
-// 			icon: document.getElementById("faSel").value
-// 		}
-// 	);
-// }
+function saveEdit() {
+	theNode = theHTMLTree.tree('getNodeById', currEditNode);
+	theHTMLTree.tree(
+		'updateNode',
+		theNode, {
+			label: document.getElementById("menuNodeName").value,
+			subname: document.getElementById("menuNodeSubName").value,
+			icon: document.getElementById("faSel").value
+		}
+	);
+}
 
 function deletePage() {
 	dialogConfirm.display("Delete Page# <div class='font75'>" + currEditNode + "</div>", "fa fa-file-text-o", "Cancel", null, "Delete", "pageDeleteYesClicked()");
